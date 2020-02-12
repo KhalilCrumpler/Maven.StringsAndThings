@@ -41,7 +41,9 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+
+
+        return base.replace(remove, "");
     }
 
     /**
@@ -52,6 +54,8 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
+
+
     public Boolean containsEqualNumberOfIsAndNot(String input){
         return null;
     }
