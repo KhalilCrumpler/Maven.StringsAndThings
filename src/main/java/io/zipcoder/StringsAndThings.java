@@ -57,7 +57,10 @@ public class StringsAndThings {
 
 
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+
+        int countIs = (input.split("is", -1).length) - 1;
+        int countNot = (input.split("not", -1).length) - 1;
+        return countIs == countNot;
     }
 
     /**
@@ -68,7 +71,20 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        int len = input.length();
+        boolean happy = true;
+        for(int i = 0; i < len; i++){
+            if(input.charAt(i) == 'g') {
+                if ((i > 0)&& input.charAt(i - 1) == 'g') {
+                    happy = true;
+                } else if ((i < len - 1) && input.charAt(i + 1) == 'g') {
+                    happy = true;
+                } else {
+                    happy = false;
+                }
+            }
+        }
+       return happy;
     }
 
 
@@ -80,6 +96,17 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int tripCount = 0;
+        String word = "";
+        int indexCounter = 1;
+        String[] words = input.split("");
+        for(int j = 0; j < words.length; j++) {
+            word = words[j] + words[j] + words[j];
+            if(input.contains(word)){
+                tripCount +=1;
+            }
+            input = input.substring(indexCounter);
+        }
+        return tripCount;
     }
 }
